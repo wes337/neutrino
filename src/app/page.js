@@ -37,9 +37,9 @@ export default function Home() {
             Your daily nutrient boost
           </h2>
           <p className="md:text-white md:text-xl lg:text-2xl">
-            Neutrino's got everything you need to go all-inº - thanks to our
-            science-backed formula packed with vitamins, minerals, and a blend
-            of botanicals.
+            Neutrino&apos;s got everything you need to go all-inº - thanks to
+            our science-backed formula packed with vitamins, minerals, and a
+            blend of botanicals.
           </p>
           <button className="flex gap-2 w-full items-center justify-center m-auto cursor-pointer bg-green-900 hover:bg-green-500 text-white text-lg rounded-full p-3 md:bg-white md:text-black md:w-auto md:m-0 md:mr-auto md:px-6 lg:py-4 lg:text-xl">
             Start Your Neutrino Today <TbArrowRight size={24} />
@@ -101,8 +101,8 @@ export default function Home() {
             <p className="text-justify text-lg">
               We set the bar for quality - and keep raising it. From research
               and formulation to sourcing, manufacturing, and testing, every
-              scoop of Neutrino is backed by rigorous protocols to ensure it's
-              safe, effective, and consistently high quality.
+              scoop of Neutrino is backed by rigorous protocols to ensure
+              it&apos;s safe, effective, and consistently high quality.
             </p>
             <button className="flex gap-2 w-full items-center justify-center m-auto cursor-pointer bg-white border border-green-900 text-green-900 hover:bg-green-500 hover:text-black hover:border-green-500 text-lg md:text-xl rounded-full p-3 md:p-4">
               <TbPlus size={24} /> View Supplement Facts

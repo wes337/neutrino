@@ -29,8 +29,8 @@ const CUSTOMERS = [
     name: "Lucian",
     text: (
       <p>
-        "Seems promising, but it's been only a few days since I am taking it."{" "}
-        <sup>2</sup>
+        "Seems promising, but it&apos;s been only a few days since I am taking
+        it." <sup>2</sup>
       </p>
     ),
     image: "/images/customer-3.webp",
@@ -39,7 +39,7 @@ const CUSTOMERS = [
     name: "Mina",
     text: (
       <p>
-        "I feel good and feel that I'm starting my day with a better and
+        "I feel good and feel that I&apos;m starting my day with a better and
         healthier habit." <sup>1,2</sup>
       </p>
     ),

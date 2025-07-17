@@ -8,10 +8,10 @@ const ITEMS = [
     header: "Driven by science, backed by research",
     text: (
       <p>
-        We've built an in-house team of scientists and researchers to stay on
-        top of the latest in nutrition and microbiome science. Every upgrade to
-        Neutrino is grounded in real research, which includes our own clinical
-        trials on the efficacy and impact of Neutrino.
+        We&apos;ve built an in-house team of scientists and researchers to stay
+        on top of the latest in nutrition and microbiome science. Every upgrade
+        to Neutrino is grounded in real research, which includes our own
+        clinical trials on the efficacy and impact of Neutrino.
       </p>
     ),
   },
@@ -34,7 +34,7 @@ const ITEMS = [
       <>
         <p>
           Neutrino is regularly tested for hundreds of potential contaminants to
-          make sure it's clean, safe, and consistent from batch to batch.
+          make sure it&apos;s clean, safe, and consistent from batch to batch.
         </p>
         <p>We test for:</p>
         <ul className="pl-2">
