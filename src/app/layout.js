@@ -1,5 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import TopBar from "@/components/top-bar";
+import Footer from "@/components/footer";
+import "@/app/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -8,6 +10,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const domine = Playfair_Display({
+  variable: "--font-domine",
   subsets: ["latin"],
 });
 
@@ -20,9 +27,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${domine.variable} antialiased`}
       >
+        <TopBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

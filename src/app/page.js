@@ -1,103 +1,208 @@
 import Image from "next/image";
+import { TbArrowRight, TbPlus, TbStarFilled } from "react-icons/tb";
+import Reviews from "@/components/reviews";
+import CardList from "@/components/card-list";
+import HeroQuotes from "@/components/hero-quotes";
+import WelcomeKit from "@/components/welcome-kit";
+import Accordion from "@/components/accordion";
+import Customers from "@/components/customers";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="font-sans">
+      <div className="relative">
+        <div className="w-full h-auto">
+          <video
+            className="md:hidden min-h-[40vh] object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={`/videos/video.mp4`} type="video/mp4" />
+          </video>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <video
+            className="hidden md:block md:max-h-[calc(100vh-90px)] md:object-cover md:w-full"
+            autoPlay
+            muted
+            loop
+            playsInline
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <source src={`/videos/video-lg.mp4`} type="video/mp4" />
+          </video>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="flex flex-col gap-4 p-5 text-center md:absolute md:top-[50%] md:left-0 md:translate-y-[-50%] md:text-left md:max-w-[75%] lg:left-[50%] lg:translate-x-[-75%] lg:max-w-[40vw] lg:gap-8">
+          <h2 className="font-medium font-serif text-2xl md:text-white md:text-6xl md:font-medium lg:text-8xl">
+            Your daily nutrient boost
+          </h2>
+          <p className="md:text-white md:text-xl lg:text-2xl">
+            Neutrino's got everything you need to go all-inº - thanks to our
+            science-backed formula packed with vitamins, minerals, and a blend
+            of botanicals.
+          </p>
+          <button className="flex gap-2 w-full items-center justify-center m-auto cursor-pointer bg-green-900 hover:bg-green-500 text-white text-lg rounded-full p-3 md:bg-white md:text-black md:w-auto md:m-0 md:mr-auto md:px-6 lg:py-4 lg:text-xl">
+            Start Your Neutrino Today <TbArrowRight size={24} />
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2 p-5 md:flex-row md:p-8 md:gap-4 md:max-w-[1400px] md:mx-auto">
+        <div className="flex items-center justify-center w-full gap-2 text-xs md:flex-col md:text-lg">
+          <div className="flex items-center text-green-500">
+            <TbStarFilled size={12} />
+            <TbStarFilled size={12} />
+            <TbStarFilled size={12} />
+            <TbStarFilled size={12} />
+            <TbStarFilled size={12} />
+          </div>
+          <span>50,000+ Verified 5-star reviews*</span>
+        </div>
+        <div className="md:w-full">
+          <Reviews />
+        </div>
+      </div>
+      <div className="md:flex lg:max-w-[1400px] p-5 py-8 lg:m-auto md:justify-between">
+        <div className="flex flex-col gap-2 md:max-w-2xl md:mx-auto">
+          <h2 className="font-medium tracking-tight text-3xl leading-8 md:text-6xl md:leading-16">
+            Your day, upgraded - every day
+          </h2>
+          <p className="text-lg md:pt-4 md:max-w-lg">
+            70+ optimized ingredients. 5 new bacterial strains. 4 clinical
+            studies. 1 scoop a day for your best possible start - now better
+            than ever with our latest upgrade.
+          </p>
+        </div>
+        <div className="pt-8 md:pt-0 md:mx-auto">
+          <CardList />
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 p-5 py-8 md:py-12 md:max-w-[1400px] md:mx-auto md:gap-8">
+        <h2 className="font-medium tracking-tight text-3xl leading-8 md:text-6xl md:leading-16 md:max-w-2xl">
+          Recommended by experts around the world
+        </h2>
+        <HeroQuotes />
+      </div>
+      <div className="bg-neutral-100 p-8 md:mt-12">
+        <WelcomeKit />
+      </div>
+      <div className="md:flex items-center">
+        <Image
+          className="max-h-[50vh] object-cover md:max-h-full md:max-w-[50vw] md:order-2"
+          src={`/images/tested.png`}
+          width={1450}
+          height={1450}
+          alt=""
+        />
+        <div className="w-full md:max-w-[700px] md:ml-auto  md:h-[100vh] md:flex md:flex-col md:justify-center md:pr-12">
+          <div className="flex flex-col gap-4 p-5 pt-8 md:pt-5 pb-0 md:pl-0 md:gap-8">
+            <h2 className="font-medium tracking-tight text-3xl leading-8 md:text-6xl md:leading-16 md:max-w-2xl">
+              Tested for those who test themselves
+            </h2>
+            <p className="text-justify text-lg">
+              We set the bar for quality - and keep raising it. From research
+              and formulation to sourcing, manufacturing, and testing, every
+              scoop of Neutrino is backed by rigorous protocols to ensure it's
+              safe, effective, and consistently high quality.
+            </p>
+            <button className="flex gap-2 w-full items-center justify-center m-auto cursor-pointer bg-white border border-green-900 text-green-900 hover:bg-green-500 hover:text-black hover:border-green-500 text-lg md:text-xl rounded-full p-3 md:p-4">
+              <TbPlus size={24} /> View Supplement Facts
+            </button>
+          </div>
+          <div className="p-5 md:h-[25vh]">
+            <Accordion />
+          </div>
+        </div>
+      </div>
+      <div className="md:flex md:max-w-[1400px] md:mx-auto md:py-12">
+        <div className="p-8 pb-0 md:order-2 md:max-w-[600px] md:ml-auto">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            className="w-full h-full"
+            src={`/images/research.webp`}
+            width={750}
+            height={750}
+            alt=""
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+        <div className="flex flex-col gap-4 p-5 md:max-w-xl md:justify-center">
+          <h3 className="font-medium tracking-tight text-xl leading-8 text-green-900 md:text-4xl md:leading-10">
+            15 years of research and 4 clinical trials
+          </h3>
+          <p className="text-lg text-green-900 mb-2">
+            In an industry where few put their supplements through scientific
+            research, we invest millions in the gold standard - randomized,
+            placebo-controlled, double- or triple-blind clinical trials.
+          </p>
+          <button className="flex gap-2 w-full md:w-[256px] items-center justify-center cursor-pointer m-auto md:m-0 bg-white border border-green-900 text-green-900 hover:bg-green-500 hover:text-black hover:border-green-500 text-md rounded-full p-3">
+            Learn More <TbArrowRight size={24} />
+          </button>
+        </div>
+      </div>
+      <div className="p-5 pb-12 mt-4 bg-gray-100">
+        <div className="p-4 flex flex-col gap-4 md:max-w-[1400px] md:mx-auto">
+          <h2 className="font-medium tracking-tight text-3xl leading-8 md:text-6xl md:leading-16 md:pt-16">
+            Real people, real results: What our customers say*
+          </h2>
+          <p className="md:text-lg md:pb-6">
+            Results from a survey of 527 verified customers who have been taking
+            Neutrino for at least 12 days.↡
+          </p>
+        </div>
+        <Customers />
+      </div>
+      <div className="md:flex md:max-w-[1400px] md:mx-auto md:py-12 md:mt-8 md:gap-12">
+        <Image
+          className="h-[375px] md:h-full md:max-w-[600px] object-cover rounded-md"
+          src={"/images/formula.webp"}
+          alt=""
+          width={750}
+          height={938}
+        />
+        <div className="p-5 py-8 flex flex-col gap-4">
+          <h2 className="font-medium tracking-tight text-3xl leading-8 md:text-6xl md:leading-16 md:pt-16">
+            Formulated for your body. Clinically backed.
+          </h2>
+          <p className="text-lg md:text-xl">
+            Our doctors, scientists, and researchers worked with third-party
+            experts to study the Neutrino Next Gen formula. Here is what they
+            found:
+          </p>
+          <div className="font-mono text-sm border-b border-black pb-2 leading-4 md:text-lg md:leading-8 md:mt-8">
+            IMPROVES KEY NUTRIENT LEVELS WITHIN 3 MONTHS†
+          </div>
+          <div className="md:flex md:justify-between">
+            <div className="flex flex-col gap-4">
+              <div className="text-6xl md:text-8xl">70%</div>
+              <div className="font-bold tracking-tighter text-md md:text-lg">
+                of subjects had an increase in RBC folate level†
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="text-6xl md:text-8xl">73%</div>
+              <div className="font-bold tracking-tighter text-md md:text-lg">
+                of subjects saw an increase in vitamin C levels1
+              </div>
+            </div>
+          </div>
+          <div className="font-mono text-sm border-b border-black pb-2 leading-4 md:text-lg md:leading-8 md:mt-8">
+            CLINICALLY SHOWN TO ENRICH THE GUT MICROBIOME†
+          </div>
+          <div className="flex flex-col gap-4 mb-4">
+            <div className="text-6xl md:text-8xl">10x</div>
+            <div className="font-bold tracking-tighter text-md md:text-lg">
+              increase in healthy bacteria in the gut†
+            </div>
+          </div>
+          <button className="flex w-full md:w-[164px] text-center justify-center align-center gap-2 cursor-pointer mr-auto md:m-0 bg-white border border-green-900 text-green-900 hover:bg-green-500 hover:text-black hover:border-green-500 text-md rounded-full p-3 md:text-lg">
+            See Our Studies
+          </button>
+          <div className="text-xs italic font-light tracking-tighter text-black/50">
+            †Based on clinical studies in healthy adults ages 18-59, evaluating
+            nutrient biomarkers, microbiome shifts, and bioavailability. Study
+            designs and durations varied. Please see neutrino.com/science for
+            additional information.
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
