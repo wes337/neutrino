@@ -21,7 +21,6 @@ export default function Home() {
           >
             <source src={`/videos/video.mp4`} type="video/mp4" />
           </video>
-
           <video
             className="hidden md:block md:max-h-[calc(100vh-90px)] md:object-cover md:w-full"
             autoPlay
